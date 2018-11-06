@@ -1,0 +1,29 @@
+//Déclaration
+
+Boucle <= Vrai;
+Erreur <= 0; //Compteur d'erreur
+Bouton X;
+Boutnon X+1;
+Y <= nombre // Définit le nombre d'erreur tolérées
+Point <= Nbpoint
+
+//Début
+//cas où le boutnon 1 sur X bouton contient la bonne réponse
+affiche ("intulé de l'énoncé");
+Tant que Boucle = vrai alors
+	si Bouton_X alors
+		Point <= Point +1; //incrémente le nombre de point
+		affiche ("Bien joué");
+		Boucle <= faux; // sort de la boucle
+	sinon si Bouton_X+1 alors
+		affiche ("faux");
+		Erreur <= Erreur + 1;
+	sinon si Erreur > Y alors
+		affiche ("Trop d'erreur");
+		Boucle <= faux; // sort de la boucle sans gagner de point
+	sinon
+		affiche ("il y a problème");
+	FinSI
+FinTantque
+
+

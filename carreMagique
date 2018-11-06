@@ -1,0 +1,88 @@
+Début programme carréMagique
+	Déclarations
+		Variables
+			var tab[3][3] entier //Tableau des valeurs entrée
+			var ligne entier value(0) //Indice du tableau (ligne)
+			var colonne entier value(0) //Indice du tableau (colonne)
+			var juste booléen value(faux)
+		Fonctions
+			verif
+				valeur1, valeur2, valeur3 entier paramètre envoyé 
+				juste booléen value(faux) paramètre reçu
+	Début
+
+		Lire carré //On récupère les donnée écrite par l'utilisateur
+		appel procédure verifLigneColonne //On vérifie si chaque ligne chaque colonne et chaque diagonale vallent 15
+		Si juste = vrai alors //Si tout est juste on continue
+			appel procédure verifChiffres //On vérifie si chaque chiffre est apellé qu'une fois
+			Si juste = vrai alors 
+				afficher('Bravo')
+			Sinon
+				afficher('Faux')
+			Fin si
+		Sinon
+			afficher('Faux')
+		Fin si
+	Fin
+
+
+	Procédure verifLigneColonne  //Procédure qui vérifie si chaque ligne colonne et diagonal sont égales à 15
+		Pour colonne allant de 1 à 3 faire
+			Si verif(tab[colonne][1], tab[colonne][2], tab[colonne][3]) alors
+				//On vérifie chaque ligne
+				juste <- vrai
+			Fin si
+			Sinon 
+				juste <- faux
+		Fin pour 
+		Si juste = vrai alors
+			Pour ligne allant de 1 à 3 faire
+				Si verif(tab[1][ligne], tab[2][ligne], tab[3][ligne]) alors
+					juste <- vrai
+				Sinon
+					juste <- faux
+					Afficher ('le carré n'est pas juste')
+				Fin si
+			Fin pour
+			Si juste = vrai alors
+				Si verif(tab[1][1], tab[2][2], tab[3][3]) et verif(tab[1][3], tab[2][2], tab[3][1] alors
+					juste <- vrai
+				Sinon
+					juste <- faux;
+			fin si
+		Fin si
+
+	fin procédure
+
+
+	Début procédure verifChiffres //Procédure qui vérifie que chaque chiffre à été utilisé qu'une seul fois
+		Pour valeur allant de 1 à 9
+			Pour ligne allant de 1 à 3 faire
+				Pour colonne allant de 1 à 3 faire
+					Si tab[ligne][colonne] = valeur
+						i++
+					Fin si
+				fin pour
+			Si i = 1 
+				juste = vrai
+			Sinon
+				juste = faux
+				break;
+			fin si
+		fin pour
+	Fin procédure
+
+	fonction verif //Fonction qui vérifie si trois valeurs sont égales à 15
+		déclaration 
+			paramètre reçu valeur1, valeur2, valeur3 entier
+			paramètre envoyé juste booléen value(faux)
+		début
+			Si valeur1 + valeur2 + valeur3 = 15 alors
+				juste = vrai
+			Sinon
+				juste = faux
+			Fin si
+			retourner juste
+		fin
+	fin fonction
+Fin programme

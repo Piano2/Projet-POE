@@ -1,0 +1,51 @@
+﻿Enigme Puzzle
+
+emplacement1[0,0]= piece1
+emplacement2[0,1]=piece2
+emplacement3[1,0]=piece3
+emplacement4[1,1]=piece4
+nbtentative=1
+puzzleReussi boolean
+puzzle = 1 
+
+ niveau 1
+
+si emplacement1[0,0]= piece1,emplacement2[0,1]=piece2,emplacement3[1,0]=piece3,emplacement4[1,1]=piece4 alors
+puzzleReussit vrai
+affiche('bravo vous avez reussi!')
+
+sinon si emplacement1[0,0]!= piece1 ou emplacement2[0,1]!=piece2 ou emplacement3[1,0]=piece3 ou emplacement4[1,1]!=piece4 alors
+puzzleReussit faux
+affiche ('vous vous etes trompé, recommencez!')
+
+niveau 2 : nombre de tentative : 5 max
+
+TQ nbtentative <=5
+si emplacement1[0,0]= piece1,emplacement2[0,1]=piece2,emplacement3[1,0]=piece3,emplacement4[1,1]=piece4 alors
+puzzleReussit vrai
+affiche('bravo vous avez reussi!')
+
+sinon si emplacement1[0,0]!= piece1 ou emplacement2[0,1]!=piece2 ou emplacement3[1,0]=piece3 ou emplacement4[1,1]!=piece4 alors
+puzzleReussit faux
+affiche ('vous vous etes trompé, recommencez!')
+
+nbtentative+1
+finTQ
+
+niveau 3 : meme que 2 avec un chrono
+niveau 4 : s'il se trompe on change de puzzle
+
+TQ puzzle <= 3
+si emplacement1[0,0]= piece1,emplacement2[0,1]=piece2,emplacement3[1,0]=piece3,emplacement4[1,1]=piece4 alors
+puzzleReussit vrai
+affiche('bravo vous avez reussi!')
+
+sinon si emplacement1[0,0]!= piece1 ou emplacement2[0,1]!=piece2 ou emplacement3[1,0]=piece3 ou emplacement4[1,1]!=piece4 alors
+puzzleReussit faux
+affiche ('vous vous etes trompé, recommencez avec un nouveau puzzle!')
+
+puzzle+1
+ 
+fin TQ
+
+

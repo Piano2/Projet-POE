@@ -1,0 +1,35 @@
+algorithme phrase inverse
+
+DECLARATION
+
+tableau énigme []
+tableau proposition []
+tableau solution []
+
+A entier value (0)
+B entier value (0)
+
+énigme finie bool
+
+procédure aléatoire
+debproc
+	pour chaque tableau solution[A], faire
+		tableau énigme[rand.A] <- tableau solution [B];
+	fin pour
+finproc
+
+fonction énigme
+debfonc
+	affiche tableau énigme
+	lit tableau énigme[A]
+	tableau proposition[B] <- tableau énigme[A]
+finfonc
+
+procédure solution
+deb proc
+	si tableau proposition[] = tableau solution []
+		énigme finie = vrai;
+		sinon pour chaque tableau proposition [A], faire
+			tableau proposition = "";
+	fin si
+fin proc

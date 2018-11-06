@@ -1,0 +1,36 @@
+PROGRAMME
+	DECLARATION
+		VARIABLES
+		var nombreAleatoire entier values (0);
+		var nombreJoueur entier values (0);
+		var tentatives entier values (0);
+
+		PROCEDURE
+			DEBUT
+				Procédure_miniJeu
+			FIN
+
+			Deb_Procédure_miniJeu
+
+				nombreAleatoire <- random de 10
+				Affiche('Devinez un nombre entre 0 et 10.')
+				Lit(nombreJoueur)
+
+				TQ (nombreJoueur != nombreAleatoire) faire
+					si (nombreJoueur < nombreAleatoire) alors
+						Affiche('C'est plus!')
+							sinon si (nombreJoueur > nombreAleatoire) alors
+								Affiche('C'est moins!')
+							finsi
+					finsi
+					Lit(nombreJoueur)
+					tentatives -> tentatives + 1
+				FTQ
+
+				si (nombreJoueur = nombreAleatoire) alors
+					Affiche('Bravo, vous avez gagné en " CAT tentatives CAT "tentatives")
+			Fin_Procédure_miniJeu
+FinProg	
+
+
+
